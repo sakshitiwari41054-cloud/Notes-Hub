@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # NotesHub
 
 A static website with notes, questions, a quiz and a question-and-answer helper for Computer Fundamentals, Data Structures, DBMS, Computer Graphics, OOPs, Java, Python, C and C++. No backend or database needed.
@@ -99,3 +100,6 @@ This is a static site, so any free host works: GitHub Pages, Netlify or Cloudfla
 ## One important note
 
 `admin.html` only generates code. It cannot save files by itself. If you publish the site online, you can delete `admin.html` before uploading.
+=======
+# Notes-Hub
+>>>>>>> c7ff8fac96f2bb7f07470188a59745ddcfe9334f
