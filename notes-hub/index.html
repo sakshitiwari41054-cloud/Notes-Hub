@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NotesHub</title>
+  <meta name="description" content="All your notes in one place: Computer Fundamentals, Data Structures, DBMS, Computer Graphics, OOPs, Java, Python, C and C++. With quizzes, a study streak and NotesBot.">
+  <!-- Handwriting font for the welcome title. Optional: the site works without internet too. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Decorative background: books, notebooks, pencils and more -->
+  <div class="doodles" aria-hidden="true">
+    <svg width="0" height="0" style="position:absolute" focusable="false">
+      <defs>
+        <symbol id="d-books" viewBox="0 0 64 64">
+          <g fill="currentColor" fill-opacity=".14" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+            <rect x="10" y="44" width="46" height="12" rx="2"/>
+            <rect x="6" y="30" width="44" height="12" rx="2"/>
+            <rect x="12" y="16" width="40" height="12" rx="2"/>
+            <path d="M18 50h8M14 36h8M20 22h8" fill="none"/>
+          </g>
+        </symbol>
+        <symbol id="d-openbook" viewBox="0 0 64 64">
+          <g fill="currentColor" fill-opacity=".14" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M32 18c-6-4-16-5-24-3v33c8-2 18-1 24 3 6-4 16-5 24-3V15c-8-2-18-1-24 3z"/>
+            <path d="M32 18v33" fill="none"/>
+            <path d="M14 24c4-1 8 0 12 2M14 32c4-1 8 0 12 2M38 26c4-2 8-3 12-2M38 34c4-2 8-3 12-2" fill="none"/>
+          </g>
+        </symbol>
+        <symbol id="d-notebook" viewBox="0 0 64 64">
+          <g fill="currentColor" fill-opacity=".14" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+            <rect x="16" y="8" width="38" height="48" rx="4"/>
+            <path d="M10 16h12M10 26h12M10 36h12M10 46h12" fill="none"/>
+            <path d="M28 20h18M28 29h18M28 38h12" fill="none"/>
+          </g>
+        </symbol>
+        <symbol id="d-pencil" viewBox="0 0 64 64">
+          <g fill="currentColor" fill-opacity=".14" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M10 54l4-13L43 12l9 9-29 29z"/>
+            <path d="M38 17l9 9M14 41l9 9" fill="none"/>
+          </g>
+        </symbol>
+        <symbol id="d-sticky" viewBox="0 0 64 64">
+          <g fill="currentColor" fill-opacity=".14" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M10 10h44v30L40 54H10z"/>
+            <path d="M40 54V40h14" fill="none"/>
+            <path d="M18 22h28M18 31h20" fill="none"/>
+          </g>
+        </symbol>
+        <symbol id="d-cap" viewBox="0 0 64 64">
+          <g fill="currentColor" fill-opacity=".14" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M32 12L4 26l28 14 28-14z"/>
+            <path d="M16 33v12c0 4 7 8 16 8s16-4 16-8V33M58 27v17" fill="none"/>
+          </g>
+        </symbol>
+        <symbol id="d-bulb" viewBox="0 0 64 64">
+          <g fill="currentColor" fill-opacity=".14" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M32 8a16 16 0 0 0-9 29c2 2 3 4 3 7h12c0-3 1-5 3-7A16 16 0 0 0 32 8z"/>
+            <path d="M26 50h12M28 56h8" fill="none"/>
+          </g>
+        </symbol>
+        <symbol id="d-code" viewBox="0 0 64 64">
+          <g fill="none" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M22 18L8 32l14 14M42 18l14 14-14 14M36 12l-8 40"/>
+          </g>
+        </symbol>
+        <symbol id="d-spark" viewBox="0 0 64 64">
+          <g fill="currentColor" fill-opacity=".2" stroke="currentColor" stroke-width="3" stroke-linejoin="round">
+            <path d="M32 6l5 17 17 5-17 5-5 17-5-17-17-5 17-5z"/>
+          </g>
+        </symbol>
+      </defs>
+    </svg>
+
+    <svg class="d k1" style="left:2%;  top:16%; --s:84px; --r:-10deg"><use href="#d-books"/></svg>
+    <svg class="d k2" style="right:3%; top:11%; --s:72px; --r:14deg"><use href="#d-pencil"/></svg>
+    <svg class="d k3" style="left:5%;  top:44%; --s:90px; --r:8deg"><use href="#d-notebook"/></svg>
+    <svg class="d k4" style="right:4%; top:37%; --s:70px; --r:-8deg"><use href="#d-bulb"/></svg>
+    <svg class="d k2" style="left:3%;  top:72%; --s:80px; --r:-6deg"><use href="#d-cap"/></svg>
+    <svg class="d k1" style="right:5%; top:64%; --s:96px; --r:10deg"><use href="#d-openbook"/></svg>
+    <svg class="d k3" style="right:2%; top:87%; --s:70px; --r:-12deg"><use href="#d-code"/></svg>
+    <svg class="d k4" style="left:9%;  top:88%; --s:76px; --r:7deg"><use href="#d-sticky"/></svg>
+    <svg class="d k3" style="left:10%; top:7%;  --s:40px; --r:0deg"><use href="#d-spark"/></svg>
+    <svg class="d k2" style="right:11%;top:50%; --s:38px; --r:0deg"><use href="#d-spark"/></svg>
+    <svg class="d k4" style="left:12%; top:58%; --s:36px; --r:0deg"><use href="#d-spark"/></svg>
+  </div>
+
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="./" aria-label="NotesHub home">
+        <span class="brand-mark" aria-hidden="true">📚</span>
+        <span class="brand-name">NotesHub</span>
+      </a>
+      <div class="search">
+        <label for="search" class="sr-only">Search notes and questions</label>
+        <input id="search" type="search" placeholder="🔍 Search notes... (press / to jump here)" autocomplete="off">
+      </div>
+      <button id="streakBtn" class="streak" type="button" aria-label="Your study streak" title="Your study streak">
+        <span aria-hidden="true">🔥</span><span id="streakNum">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <section class="hero">
+      <div class="notebook">
+        <p class="stickers" aria-hidden="true"><span>📚</span><span>✏️</span><span>💡</span></p>
+
+        <h1><span class="wave" aria-hidden="true">👋</span> Welcome to <span class="hl">NotesHub</span>, guys! 🎉</h1>
+        <p class="lead">You'll find all your notes right here 📚 Notes, questions and answers for every subject, ready to read. All the best, bro! 💪🔥</p>
+
+        <ol class="howto" aria-label="How to use this site">
+          <li>Pick a subject 👇</li>
+          <li>Open a note or a question 📖</li>
+          <li>Tap Show answer ✅</li>
+        </ol>
+
+        <ul class="stats" id="stats" aria-label="Site statistics"></ul>
+      </div>
+    </section>
+
+    <nav class="tabs" id="tabs" aria-label="Sections">
+      <button type="button" id="tab-library" data-view="library" aria-selected="true" aria-controls="view-library">📚 Library</button>
+      <button type="button" id="tab-quiz" data-view="quiz" aria-selected="false" aria-controls="view-quiz">🎯 Quiz</button>
+      <button type="button" id="tab-ask" data-view="ask" aria-selected="false" aria-controls="view-ask">🤖 Ask NotesBot</button>
+    </nav>
+
+    <!-- LIBRARY -->
+    <div id="view-library" class="view">
+      <section class="controls" aria-label="Filters">
+        <div class="chips" id="subjectChips" role="group" aria-label="Choose a subject"></div>
+
+        <div class="row">
+          <div class="seg" id="typeSeg" role="group" aria-label="Choose a type">
+            <button type="button" data-type="all" class="on" aria-pressed="true">All</button>
+            <button type="button" data-type="note" aria-pressed="false">📝 Notes</button>
+            <button type="button" data-type="question" aria-pressed="false">❓ Questions</button>
+          </div>
+
+          <label class="select">
+            <span class="sr-only">Level</span>
+            <select id="levelSel">
+              <option value="all">All levels</option>
+              <option value="Easy">🟢 Easy</option>
+              <option value="Medium">🟠 Medium</option>
+              <option value="Hard">🔴 Hard</option>
+            </select>
+          </label>
+
+          <p class="count" id="count" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <section id="grid" class="grid" aria-label="List of notes and questions"></section>
+
+      <div id="empty" class="empty" hidden>
+        <p class="empty-title">Nothing found 🙈</p>
+        <p>Try a different word or clear the filters.</p>
+        <button id="resetBtn" class="btn" type="button">Clear filters</button>
+      </div>
+    </div>
+
+    <!-- QUIZ -->
+    <section id="view-quiz" class="view" hidden aria-label="Quiz">
+      <div id="quizRoot"></div>
+    </section>
+
+    <!-- ASK NOTESBOT -->
+    <section id="view-ask" class="view" hidden aria-label="Ask NotesBot">
+      <div class="chat">
+        <div class="chat-head">
+          <span class="bot-avatar" aria-hidden="true">🤖</span>
+          <div class="grow">
+            <strong>NotesBot</strong>
+            <p>Type any question. I search all the notes on this site and give you the best answer. Works offline.</p>
+          </div>
+          <button type="button" id="chatClear" class="btn small ghost">🧹 Clear</button>
+        </div>
+
+        <div id="chatLog" class="chat-log" aria-live="polite"></div>
+
+        <div id="chatSuggest" class="suggest" aria-label="Example questions"></div>
+
+        <form id="chatForm" class="chat-form" autocomplete="off">
+          <label class="sr-only" for="chatInput">Your question</label>
+          <input id="chatInput" type="text" placeholder="Ask anything, e.g. What is normalization?" maxlength="200">
+          <button class="btn" type="submit">Send ➤</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p class="credit">Made by <strong>bebepao</strong> 💙</p>
+      <p>NotesHub &middot; Found a mistake? Please tell your teacher.</p>
+    </div>
+  </footer>
+
+  <!-- Reader (modal) -->
+  <div id="overlay" class="overlay" hidden>
+    <article class="reader" role="dialog" aria-modal="true" aria-labelledby="readerTitle" tabindex="-1">
+      <header class="reader-head">
+        <div class="reader-meta" id="readerMeta"></div>
+        <button id="closeBtn" class="icon-btn" type="button" aria-label="Close">&times;</button>
+      </header>
+      <h2 id="readerTitle"></h2>
+      <div id="readerBody" class="prose"></div>
+      <footer class="reader-foot" id="readerFoot"></footer>
+    </article>
+  </div>
+
+  <!-- Streak dialog -->
+  <div id="dlg" class="overlay center" hidden>
+    <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="dlgTitle" tabindex="-1">
+      <button id="dlgClose" class="icon-btn" type="button" aria-label="Close">&times;</button>
+      <div id="dlgBody"></div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status" hidden></div>
+
+  <script src="notes-data.js"></script>
+  <script src="quiz-data.js"></script>
+  <script src="app.js"></script>
+  <script src="quiz.js"></script>
+  <script src="ask.js"></script>
+</body>
+</html>
