@@ -1,0 +1,66 @@
+=====================================================
+   WELCOME TO NOTESHUB!   All the best, bro!
+=====================================================
+
+HOW TO RUN IT (takes 1 minute)
+
+  1. Extract (unzip) the zip file. You will get a folder named "notes-hub".
+
+  2. Open VS Code.
+     Click  File > Open Folder...  and choose the "notes-hub" folder.
+
+  3. Install the "Live Server" extension (only the first time):
+     click the Extensions icon on the left, search "Live Server",
+     and click Install.
+
+  4. In the VS Code file list, right-click  index.html
+     and choose  "Open with Live Server".
+
+  Your website opens in the browser. That is it!
+
+  (Quick way without VS Code: just double-click index.html.)
+
+
+WHAT THE WEBSITE HAS
+
+  Library        All notes and questions, with search and filters.
+  Quiz           72 multiple choice questions with score and review.
+  Ask NotesBot   Type any question and get the answer from the notes.
+                 (It works offline and only knows the notes in this site.)
+  Study streak   The fire button at the top counts the days in a row
+                 a student studies. It is saved in the student's browser.
+
+
+WHAT IS INSIDE THE FOLDER
+
+  index.html     The website that students open.
+  notes-data.js  All the notes and questions are stored here.
+  quiz-data.js   All the quiz multiple choice questions are stored here.
+  admin.html     A form to create a new note, question or quiz MCQ.
+  style.css      Design and colors.
+  app.js         Library, search, reader and study streak.
+  quiz.js        The quiz.
+  ask.js         NotesBot (the question and answer helper).
+  files/         Put PDF notes here (one folder for each subject).
+  README.md      Full instructions.
+
+
+HOW TO ADD A NEW NOTE, QUESTION OR QUIZ MCQ
+
+  1. Open admin.html with Live Server.
+  2. Choose the type, fill in the form, click "Generate code", then "Copy code".
+  3. Paste the code right below the first line of the file it names:
+        notes-data.js  ->  window.NOTES = [
+        quiz-data.js   ->  window.QUIZ = [
+  4. Save the file (Ctrl + S). The website refreshes by itself.
+  NotesBot learns every new note automatically.
+
+
+PUT IT ONLINE FOR STUDENTS (optional, free)
+
+  Upload the whole folder to GitHub Pages, Netlify or Cloudflare Pages
+  and share the link with your students.
+  (Tip: delete admin.html before uploading, it is only for you.)
+
+Made by bebepao
+Happy learning!
